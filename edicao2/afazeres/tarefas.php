@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start(); ?>  
 <html>
     <head>
         <meta charset="utf-8" />
@@ -40,3 +40,4 @@
         </table>
     </body>
 </html>
+<!-- testes php -->

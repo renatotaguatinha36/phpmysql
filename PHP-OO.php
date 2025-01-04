@@ -38,7 +38,10 @@ class Fruit {
 
 $apple = new Fruit("Apple", "red", "leve");
 echo $apple->get_name();
+echo(" ");
 echo $apple->get_color();
+echo(" ");
 echo $apple->get_weight();
+echo(" ");
 echo $apple->set_name("Apple2");
 ?>

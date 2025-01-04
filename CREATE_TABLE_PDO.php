@@ -25,5 +25,11 @@ try {
   echo $sql . "<br>" . $e->getMessage();
 }
 
-$conn = null;
+
+
+
+$InsertInto = "INSERT INTO MyGuests (firstname, lastname, email)
+  VALUES ('John', 'Doe', 'john@example.com')";
+
+$conn->exec($InsertInto);
 ?>

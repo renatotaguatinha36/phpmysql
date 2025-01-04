@@ -1,9 +1,9 @@
 <?php
 class Fruit {
   // Properties
-  public $name;
-  public $color;
-  public $size;
+  private $name;
+  private $color;
+  private $size;
 
   function __construct($name, $color, $size) {
     $this->name = $name;
@@ -25,12 +25,19 @@ class Fruit {
     return $this->color;
   }
 
+  function set_size($size) {
+    $this->size = $size;
+  }
+
   function get_size() {
     return $this->size;
   }
 }
 
+// instância
+
 $apple = new Fruit("Apple", "red", 1.2);
 echo $apple->get_name();
 echo $apple->get_color();
+echo $apple->get_size();
 ?>

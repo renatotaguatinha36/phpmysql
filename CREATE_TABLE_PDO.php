@@ -8,6 +8,7 @@ try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   // set the PDO error mode to exception
   $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 
   // sql to create table
   $sql = "CREATE TABLE MyGuests (
@@ -33,4 +34,11 @@ $InsertInto = "INSERT INTO MyGuests (firstname, lastname, email)VALUES('John', '
 $conn->exec($InsertInto);
 $last_id = $conn->lastInsertId();
   echo "New record created successfully. Last inserted ID is: " . $last_id;
+
+  while($lista = $stmt->fetchAll(PDO::FETCH_ASSOC)){ // retorno Associativo
+
+    echo  "<pre>";
+         print_r($lista);
+    echo  "</pre>";
+ }
 ?>

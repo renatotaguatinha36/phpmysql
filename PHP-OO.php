@@ -3,12 +3,12 @@ class Fruit {
   // Properties
   private $name;
   private $color;
-  private $size;
+  private $weight;
 
-  function __construct($name, $color, $size) {
+  function __construct($name, $color, $weight) {
     $this->name = $name;
     $this->color = $color;
-    $this->size = $size;
+    $this->weight = $weight;
   }
 
   // Methods
@@ -25,19 +25,20 @@ class Fruit {
     return $this->color;
   }
 
-  function set_size($size) {
-    $this->size = $size;
+  function set_weight($weight) {
+    $this->weight = $weight;
   }
 
-  function get_size() {
-    return $this->size;
+  function get_weight() {
+    return $this->weight;
   }
 }
 
 // instância
 
-$apple = new Fruit("Apple", "red", 1.2);
+$apple = new Fruit("Apple", "red", "leve");
 echo $apple->get_name();
 echo $apple->get_color();
-echo $apple->get_size();
+echo $apple->get_weight();
+echo $apple->set_name("Apple2");
 ?>

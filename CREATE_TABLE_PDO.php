@@ -4,6 +4,13 @@ $username = "username";
 $password = "password";
 $dbname = "myDBPDO";
 
+// prepare sql and bind parameters
+$stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email)
+VALUES (:firstname, :lastname, :email)");
+$stmt->bindParam(':firstname', $firstname);
+$stmt->bindParam(':lastname', $lastname);
+$stmt->bindParam(':email', $email);
+
 try {
   $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
   // set the PDO error mode to exception
@@ -41,4 +48,11 @@ $last_id = $conn->lastInsertId();
          print_r($lista);
     echo  "</pre>";
  }
+
+ // prepare sql and bind parameters
+ $stmt = $conn->prepare("INSERT INTO MyGuests (firstname, lastname, email)
+ VALUES (:firstname, :lastname, :email)");
+ $stmt->bindParam(':firstname', $firstname);
+ $stmt->bindParam(':lastname', $lastname);
+ $stmt->bindParam(':email', $email);
 ?>

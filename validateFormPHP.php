@@ -17,3 +17,7 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
+
+$nome = test_input($_POST['nome']);
+$email = test_input($_POST['email']);
+$senha = md5(test_input($_POST['senha']));
